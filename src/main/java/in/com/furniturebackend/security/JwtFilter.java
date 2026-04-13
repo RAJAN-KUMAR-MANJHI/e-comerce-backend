@@ -84,6 +84,10 @@ public class JwtFilter extends OncePerRequestFilter {
                                 null,
                                 authorities
                         );
+                
+             
+                
+                
 
                 authentication.setDetails(
                         new WebAuthenticationDetailsSource()

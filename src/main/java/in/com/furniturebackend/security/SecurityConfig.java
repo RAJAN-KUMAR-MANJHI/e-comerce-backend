@@ -54,6 +54,7 @@ public class SecurityConfig {
               
            // Category Public GET
               .requestMatchers(HttpMethod.GET, "/api/categories/**").permitAll()
+              
 
               // Category ADMIN Only
               .requestMatchers(HttpMethod.POST, "/api/categories/**").hasRole("ADMIN")

@@ -1,5 +1,10 @@
 package in.com.furniturebackend.model;
 
+
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,16 +22,19 @@ public class CartItem {
 	
 	//---many cart item belong to one cart---//
 	
-	
+	//@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "cart_id")
+	@JsonBackReference
 	private Cart cart;
 	
 	//--- many cartitem  belong to one product---//
 	
+	
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
+	
 	
 	private int quantity;
 	
