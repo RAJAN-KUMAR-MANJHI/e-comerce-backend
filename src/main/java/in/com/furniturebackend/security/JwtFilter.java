@@ -30,18 +30,18 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 
     // ✅ Skip Public URLs (VERY IMPORTANT)
-//    @Override
-//    protected boolean shouldNotFilter(HttpServletRequest request) {
-//
-//        String path = request.getRequestURI();
-//
-//        return path.startsWith("/api/auth/")
-//                || path.startsWith("/v3/api-docs")
-//                || path.startsWith("/swagger-ui")
-//                || path.startsWith("/swagger-ui.html")
-//                || (request.getMethod().equals("GET")
-//                    && path.startsWith("/api/products"));
-//    }
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+
+        String path = request.getRequestURI();
+
+        return path.startsWith("/api/auth/")
+                || path.startsWith("/v3/api-docs")
+                || path.startsWith("/swagger-ui")
+                || path.startsWith("/swagger-ui.html")
+                || (request.getMethod().equals("GET")
+                    && path.startsWith("/api/products"));
+    }
     
   
 
